@@ -9,25 +9,47 @@
     app:cardCornerRadius="5dp"
     tools:context=".view.DetalleActivity">
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:id="@+id/activityDetalle_imageView"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:id="@+id/activityDetalle_textViewNombre"
-            android:text="Hola mundo"
-            android:gravity="center"/>
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/fragmentDetalle_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher_round" />
+
+
+            <TextView
+                android:id="@+id/fragmentDetalle_textViewNombre"
+                style="@style/Base.Widget.AppCompat.ActionButton.Overflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="NOMBRE"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/celdaReceta_TextID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:text="ID"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.v7.widget.CardView>

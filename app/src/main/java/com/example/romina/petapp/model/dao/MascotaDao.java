@@ -1,5 +1,7 @@
 package com.example.romina.petapp.model.dao;
 
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.romina.petapp.model.pojo.ContainerMascota;
@@ -21,6 +23,7 @@ public class MascotaDao extends MascotaRetrofit{
     private static final String BASE_URL = "https://pokeapi.co/api/v2/";
     //Atributo Service, que me va a permitir hacer las llamadas definidas
     private MascotaService mascotaService;
+    private ProgressBar progressBar;
 
     public MascotaDao() {
         super(BASE_URL);
@@ -35,7 +38,6 @@ public class MascotaDao extends MascotaRetrofit{
                 listenerDelControler.finish(response.body());
                 System.out.println("Se muestra la lista correctamente");
                 //Toast.makeText(MascotaService.this, "La lista se muestra correctamente", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
