@@ -1,12 +1,16 @@
 package com.example.romina.petapp.model.dao;
 
-import com.example.romina.petapp.model.pojo.ConteinerMascota;
+import android.widget.Toast;
+
+import com.example.romina.petapp.model.pojo.ContainerMascota;
 import com.example.romina.petapp.utils.ResultListener;
-import com.example.romina.petapp.utils.SwaggerApiKey;
+import com.example.romina.petapp.view.MainActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 
 public class MascotaDao extends MascotaRetrofit{
@@ -24,17 +28,23 @@ public class MascotaDao extends MascotaRetrofit{
     }
 
 
-    public void traerMascotas(final ResultListener<ConteinerMascota> listenerDelControler){
-        mascotaService.getMascotas().enqueue(new Callback<ConteinerMascota>() {
+    public void traerMascotas(final ResultListener<ContainerMascota> listenerDelControler){
+        mascotaService.getMascotas().enqueue(new Callback<ContainerMascota>() {
             @Override
-            public void onResponse(Call<ConteinerMascota> call, Response<ConteinerMascota> response) {
+            public void onResponse(Call<ContainerMascota> call, Response<ContainerMascota> response) {
                 listenerDelControler.finish(response.body());
+                System.out.println("Se muestra la lista correctamente");
+                //Toast.makeText(MascotaService.this, "La lista se muestra correctamente", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
-            public void onFailure(Call<ConteinerMascota> call, Throwable t) {
+            public void onFailure(Call<ContainerMascota> call, Throwable t) {
                 System.out.println("Ha ocurrido un error AL TRAER LAS MASCOTAS");
+                //Toast.makeText(MainActivity.this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 }

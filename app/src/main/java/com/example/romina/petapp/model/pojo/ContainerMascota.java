@@ -4,16 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ConteinerMascota {
+public class ContainerMascota {
 
    private List<Mascota> results;
 
-    public ConteinerMascota(List<Mascota> results) {
-        this.results = results;
-    }
 
-    public ConteinerMascota() {
-    }
 
     public List<Mascota> getResults() {
         return results;

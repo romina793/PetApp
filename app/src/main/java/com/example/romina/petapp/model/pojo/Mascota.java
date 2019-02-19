@@ -3,8 +3,9 @@ package com.example.romina.petapp.model.pojo;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
-public class Mascota   {
+public class Mascota   implements  Serializable{
 /*
     @SerializedName("name") private String nombreMascota;
     @SerializedName("photoUrls") private Integer imagenMascota*/;
@@ -36,6 +37,9 @@ public class Mascota   {
     public String getUrl() {
         return url;
     }
+
+
+
 /*
 
     public String getNombreMascota() {

@@ -17,16 +17,20 @@ import java.util.List;
 public class AdapterMascota extends RecyclerView.Adapter {
 
     private List<Mascota> listaDeMascotas;
+    private ListenerAdapterMascota listenerAdapterMascota;
+
 
     public AdapterMascota() {
         listaDeMascotas = new ArrayList<>();
     }
 
-    public void setListaDeMascotas(List<Mascota> listaDeMascotas) {
+    public void setListaDeMascotas(List<Mascota> listaDeMascotas ) {
         this.listaDeMascotas = listaDeMascotas;
+        this.listenerAdapterMascota = listenerAdapterMascota;
         notifyDataSetChanged();
 
     }
+
 
     @NonNull
     @Override
@@ -50,14 +54,28 @@ public class AdapterMascota extends RecyclerView.Adapter {
     private class ViewHolderMascota extends RecyclerView.ViewHolder{
 
         private TextView textViewNombreMascota;
+        private Mascota mascota;
 
         public ViewHolderMascota(View itemView) {
             super(itemView);
-            textViewNombreMascota = itemView.findViewById(R.id.celda_Nombre_Mascota);
+            textViewNombreMascota = itemView.findViewById(R.id.celda_nombreMascota);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerAdapterMascota.informarSeleccion(mascota);
+
+                }
+            });
         }
 
-        public void loadMascota(Mascota mascota){
+        public void loadMascota(Mascota unaMascota){
+            this.mascota = unaMascota;
             textViewNombreMascota.setText(mascota.getName());
         }
     }
+
+    public interface ListenerAdapterMascota{
+        public void informarSeleccion(Mascota mascota);
+    }
+
 }
