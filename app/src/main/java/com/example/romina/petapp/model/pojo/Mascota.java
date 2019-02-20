@@ -10,8 +10,11 @@ import java.lang.annotation.Annotation;
 import java.util.List;
 
 public class Mascota   implements  Serializable{
-
+    @SerializedName("name")
+    @Expose
     private String name;
+    @SerializedName("id")
+    @Expose
     private String id;
     @SerializedName("photoUrls")
     @Expose
