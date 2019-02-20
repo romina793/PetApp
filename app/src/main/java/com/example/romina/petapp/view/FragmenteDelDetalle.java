@@ -2,7 +2,9 @@ package com.example.romina.petapp.view;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ public class FragmenteDelDetalle extends Fragment implements AdapterMascota.List
     private View vistaDelFragment;
     public static final String KEY_NAME = "KEY_NAME";
     private ListenerFragmentMascota listenerFragmentMascota;
+    private FloatingActionButton botonMaps;
 
 
     public FragmenteDelDetalle() {
@@ -40,6 +43,13 @@ public class FragmenteDelDetalle extends Fragment implements AdapterMascota.List
         vistaDelFragment = inflater.inflate(R.layout.fragment_fragmente_del_detalle, container, false);
         Bundle bundle = getArguments();
         Mascota mascota = (Mascota) bundle.getSerializable(KEY_NAME);
+        botonMaps = vistaDelFragment.findViewById(R.id.boton_maps);
+
+        botonMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ) {
+            }
+        });
 
         //ImageView fragmentDetalle_imageView = vistaDelFragment.findViewById(R.id.fragmentDetalle_imageView);
         //fragmentDetalle_imageView.setImageResource(receta.getImagenReceta());

@@ -37,13 +37,13 @@ public class MascotaDao extends MascotaRetrofit{
             public void onResponse(Call<ContainerMascota> call, Response<ContainerMascota> response) {
                 listenerDelControler.finish(response.body());
                 System.out.println("Se muestra la lista correctamente");
-                //Toast.makeText(MascotaService.this, "La lista se muestra correctamente", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "La lista se muestra correctamente", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<ContainerMascota> call, Throwable t) {
                 System.out.println("Ha ocurrido un error AL TRAER LAS MASCOTAS");
-                //Toast.makeText(MainActivity.this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
             }
         });
 
