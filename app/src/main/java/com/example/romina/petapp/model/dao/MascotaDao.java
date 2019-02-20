@@ -20,7 +20,7 @@ public class MascotaDao extends MascotaRetrofit{
 
 
     //Defino la urlBase
-    private static final String BASE_URL = "https://pokeapi.co/api/v2/";
+    private static final String BASE_URL = "http://petstore.swagger.io/v2/";
     //Atributo Service, que me va a permitir hacer las llamadas definidas
     private MascotaService mascotaService;
     private ProgressBar progressBar;

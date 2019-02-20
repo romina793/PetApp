@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.JsonReader;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -17,6 +18,9 @@ import com.example.romina.petapp.controller.MascotaController;
 import com.example.romina.petapp.model.pojo.ContainerMascota;
 import com.example.romina.petapp.model.pojo.Mascota;
 import com.example.romina.petapp.utils.ResultListener;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements FragmenteDelDetalle.ListenerFragmentMascota, AdapterMascota.ListenerAdapterMascota{
 
@@ -87,4 +91,5 @@ public class MainActivity extends AppCompatActivity implements FragmenteDelDetal
     public void notificar(Mascota mascota) {
 
     }
+
 }

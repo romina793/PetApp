@@ -9,7 +9,6 @@ public class ContainerMascota {
    private List<Mascota> results;
 
 
-
     public List<Mascota> getResults() {
         return results;
     }
