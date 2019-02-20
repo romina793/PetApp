@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.example.romina.petapp.R;
 import com.example.romina.petapp.model.pojo.Mascota;
@@ -15,7 +14,7 @@ import com.example.romina.petapp.model.pojo.Mascota;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmenteDelDetalle extends Fragment {
+public class FragmenteDelDetalle extends Fragment implements AdapterMascota.ListenerAdapterMascota{
 
     private View vistaDelFragment;
     public static final String KEY_NAME = "KEY_NAME";
@@ -48,11 +47,17 @@ public class FragmenteDelDetalle extends Fragment {
         return vistaDelFragment;
     }
 
+    @Override
+    public void informarSeleccion(Mascota mascota) {
+        listenerFragmentMascota.notificar(mascota);
+
+    }
+
 
     //Creamos una interface que va a funcionar como listener de este fragment para quien la implemente
     public interface ListenerFragmentMascota{
         //notificar al listener de este fragment y le va a pasar la información
-        public void notificar ();
+        public void notificar(Mascota mascota);
     }
 
 

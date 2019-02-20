@@ -6,8 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.romina.petapp.R;
@@ -23,8 +21,18 @@ public class DetalleActivity extends AppCompatActivity implements FragmenteDelDe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        //TODO Traer la info acá
 
+        //Recibo el intent
+        Intent unIntent = getIntent();
+        //Recibo el bundle
+        Bundle unBundle = unIntent.getExtras();
+
+        FragmenteDelDetalle fragmenteDelDetalle = new FragmenteDelDetalle();
+
+        //Seteo al fragment el bundle
+        fragmenteDelDetalle.setArguments(unBundle);
+
+        setearFragment(fragmenteDelDetalle);
 
     }
 
@@ -57,7 +65,7 @@ public class DetalleActivity extends AppCompatActivity implements FragmenteDelDe
     }
 
     @Override
-    public void notificar() {
+    public void notificar(Mascota mascota) {
 
     }
 }

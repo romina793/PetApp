@@ -51,6 +51,7 @@ public class AdapterMascota extends RecyclerView.Adapter {
         return listaDeMascotas.size();
     }
 
+
     private class ViewHolderMascota extends RecyclerView.ViewHolder{
 
         private TextView textViewNombreMascota;

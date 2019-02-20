@@ -18,7 +18,7 @@ import com.example.romina.petapp.model.pojo.ContainerMascota;
 import com.example.romina.petapp.model.pojo.Mascota;
 import com.example.romina.petapp.utils.ResultListener;
 
-public class MainActivity extends AppCompatActivity implements AdapterMascota.ListenerAdapterMascota{
+public class MainActivity extends AppCompatActivity implements FragmenteDelDetalle.ListenerFragmentMascota, AdapterMascota.ListenerAdapterMascota{
 
     private RecyclerView recyclerView;
     private AdapterMascota adapter;
@@ -83,4 +83,8 @@ public class MainActivity extends AppCompatActivity implements AdapterMascota.Li
     }
 
 
+    @Override
+    public void notificar(Mascota mascota) {
+
+    }
 }
