@@ -6,10 +6,10 @@
 
     https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=A7:6E:B3:7A:FA:2B:D3:80:0D:C1:E5:0B:11:3D:F0:49:1F:37:F8:FD%3Bcom.example.romina.petapp
 
-    You can also add your credentials to an existing key, using these values:
+    You can also add your credentials to an existing key, using these values:com.example.romina.petapp
 
     Package name:
-    A7:6E:B3:7A:FA:2B:D3:80:0D:C1:E5:0B:11:3D:F0:49:1F:37:F8:FD
+    A7:6E:B3:7A:FA:2B:D3:80:0D:C1:E5:0B:11:3D:F0:49:1F:37:F8:FDcom.example.romina.petapp
 
     SHA-1 certificate fingerprint:
     A7:6E:B3:7A:FA:2B:D3:80:0D:C1:E5:0B:11:3D:F0:49:1F:37:F8:FD
@@ -20,5 +20,5 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR_KEY_HERE</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAE0QfGVsU4ffptKtThLBi1mSIFylpZnQs</string>
 </resources>
