@@ -15,12 +15,16 @@ import android.widget.Toast;
 
 import com.example.romina.petapp.R;
 import com.example.romina.petapp.controller.MascotaController;
+import com.example.romina.petapp.model.dao.MascotaDao;
+import com.example.romina.petapp.model.dao.MascotaService;
 import com.example.romina.petapp.model.pojo.ContainerMascota;
 import com.example.romina.petapp.model.pojo.Mascota;
 import com.example.romina.petapp.utils.ResultListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity implements FragmenteDelDetalle.ListenerFragmentMascota, AdapterMascota.ListenerAdapterMascota{
 
@@ -63,14 +67,22 @@ public class MainActivity extends AppCompatActivity implements FragmenteDelDetal
                 adapter = new AdapterMascota();
 
                 MascotaController mascotaController = new MascotaController();
+
                 recyclerView.setAdapter(adapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false));
+                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
+
+                try {
                 mascotaController.traerMascotas(new ResultListener<ContainerMascota>() {
                     @Override
-                    public void finish(ContainerMascota containerMascota) {
+                    public void finish( ContainerMascota containerMascota ) {
                         adapter.setListaDeMascotas(containerMascota.getResults());
                     }
                 });
+                Toast.makeText(MainActivity.this, "La lista se muestra correctamente", Toast.LENGTH_SHORT).show();
+                }
+                catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
+                }
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

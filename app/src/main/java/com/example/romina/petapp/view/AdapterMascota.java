@@ -57,12 +57,13 @@ public class AdapterMascota extends RecyclerView.Adapter {
         private TextView textViewNombreMascota;
         private Mascota mascota;
 
-        public ViewHolderMascota(View itemView) {
+        public ViewHolderMascota( final View itemView) {
             super(itemView);
             textViewNombreMascota = itemView.findViewById(R.id.celda_nombreMascota);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    listenerAdapterMascota = (ListenerAdapterMascota) itemView.getContext();
                     listenerAdapterMascota.informarSeleccion(mascota);
 
                 }
