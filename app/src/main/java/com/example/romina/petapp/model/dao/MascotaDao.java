@@ -32,7 +32,7 @@ public class MascotaDao extends MascotaRetrofit{
 
 
     public void traerMascotas(final ResultListener<ContainerMascota> listenerDelControler){
-        mascotaService.getMascotas().enqueue(new Callback<ContainerMascota>() {
+        mascotaService.getMascotas("available").enqueue(new Callback<ContainerMascota>() {
             @Override
             public void onResponse(Call<ContainerMascota> call, Response<ContainerMascota> response) {
                 listenerDelControler.finish(response.body());
